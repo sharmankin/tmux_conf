@@ -2,8 +2,12 @@
 
 mkdir -p ~/.config/run
 
+[[ -n $1 ]] && alias_name=$1 || alias_name=wf
+
+[[ -n $2 ]] && session_prefix=$2 || session_prefix=$USER
+
 if [[ -d ~/.bashrc.d ]]; then
   tee ~/.bashrc.d/50-tmux-workflow-alias <<EOF
-alias wf='tmux -S ~/.config/run/tmux attach -d -t $USER-workflow 2>/dev/null || tmux -S ~/.config/run/tmux new -t $USER-workflow'
+alias $alias_name='tmux -S ~/.config/run/tmux attach -d -t $session_prefix-workflow 2>/dev/null || tmux -S ~/.config/run/tmux new -t $session_prefix-workflow'
 EOF
 fi
