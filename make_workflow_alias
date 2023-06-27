@@ -3,7 +3,7 @@
 mkdir -p ~/.config/run
 
 if [[ -d ~/.bashrc.d ]]; then
-  tee ~/.bashrc.d/50-tmux-workwlow-alias <<EOF
-alias wf='tmux -S ~/.config/run/tmux attach -d -t $USER-workwlow 2>/dev/null || tmux -S ~/.config/run/tmux new -t $USER-workwlow'
+  tee ~/.bashrc.d/50-tmux-workflow-alias <<EOF
+alias wf='tmux -S ~/.config/run/tmux attach -d -t $USER-workflow 2>/dev/null || tmux -S ~/.config/run/tmux new -t $USER-workflow'
 EOF
 fi
